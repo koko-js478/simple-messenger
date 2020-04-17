@@ -1,0 +1,29 @@
+<div class = "Users" *ngFor="let user of users | async">
+    <div *ngIf="user.id == sender">
+        <h3>Sender is {{ user.username }}</h3>
+    </div>
+    <div *ngIf="user.id == receiver">
+        <h3>Receiver is {{ user.username }}</h3>
+    </div>
+</div>
+
+<div class = "PreviousMessages" *ngFor="let prevmsg of prevmessages">
+    <div *ngIf="prevmsg.sender == sender && prevmsg.receiver == receiver">
+        <p>{{ prevmsg.textcontent }}</p>
+    </div>
+    <div *ngIf="prevmsg.sender == receiver && prevmsg.receiver == sender">
+        <h3>{{ prevmsg.textcontent }}</h3>
+    </div>
+</div>
+
+<div class = "Messages" *ngFor="let data of messages">
+    <div *ngIf="data.senderid == receiver">
+        <h3>{{ data.msg }}</h3>
+    </div>
+    <div *ngIf="data.receiverid == receiver && data.senderid == sender">
+        <p>{{ data.msg }}</p>
+    </div>
+</div>
+
+<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+<button (click)="sendMessage()">Send</button>
