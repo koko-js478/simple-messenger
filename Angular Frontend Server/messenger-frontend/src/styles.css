@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+  }
+
+  h1 {
+    font-family:"Open Sans";
+    color: black;
+    text-align: center;
+    font-size: 42px;
+  }
+
+  h2 {
+    font-family:"Open Sans";
+    color: black;
+    text-align: center;
+  }
+
+   h3 {
+    font-family:"Open Sans";
+    color: black;
+    text-align: center;
+   }
+   .button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+  }
+  
+  .button:hover {
+    background-color: #008CBA;
+    color: white;
+  }
+
+  
+
