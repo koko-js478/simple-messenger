@@ -8,10 +8,10 @@
 </div>
 
 <div class = "PreviousMessages" *ngFor="let prevmsg of prevmessages">
-    <div *ngIf="prevmsg.sender == sender && prevmsg.receiver == receiver">
+    <div *ngIf="prevmsg.sender == sender+1 && prevmsg.receiver == receiver+1">
         <p>{{ prevmsg.textcontent }}</p>
     </div>
-    <div *ngIf="prevmsg.sender == receiver && prevmsg.receiver == sender">
+    <div *ngIf="prevmsg.sender == receiver+1 && prevmsg.receiver == sender+1">
         <h3>{{ prevmsg.textcontent }}</h3>
     </div>
 </div>
