@@ -1,0 +1,57 @@
+.but1 {
+    background-color: white; /* Green */
+    border: 1px solid dodgerblue;
+    border-radius: 5px;
+    color: black;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Open Sans";
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .but1:hover {
+    background-color: dodgerblue;
+    color: white;
+  }
+
+  input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid lightblue;
+    box-sizing: border-box;
+    color: black;
+    font-size : 16px;
+    font-family: "Open Sans";
+  }
+  
+  input[type=text]:hover {
+    border-bottom: 2px solid tomato;
+  }
+
+  ::placeholder {
+      text-align: center;
+  }
+
+  input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid lightblue;
+    box-sizing: border-box;
+    color: black;
+    font-size : 16px;
+    font-family: "Open Sans";
+    text-align: left;
+  }
+  
+  input[type=password]:hover {
+    border-bottom: 2px solid tomato;
+  }
