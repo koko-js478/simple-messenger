@@ -13,10 +13,10 @@ export class WebSocketService {
     private socket: any;
     readonly uri: string = "http://localhost:3000";
     postId;
-    
+
     constructor(
         private http: HttpClient
-        ) {        
+        ) {
         this.socket = io.connect(this.uri);
     }
 
@@ -33,10 +33,9 @@ export class WebSocketService {
     }
 
     getPrevMessages(): Observable<any> {
-        console.log("Here");
         return this.http.get('http://127.0.0.1:8000/chat/chats/?format=json');
     }
-    
+
     public getMessages() {
         return Observable.create((observer) => {
             this.socket.on('new-msg', function (data) {
