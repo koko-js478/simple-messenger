@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 
+import { Router } from '@angular/router';
+import { StoreuserService } from '../storeUser.service';
+
 @Component({
     selector: 'login-component',
     templateUrl: './login.component.html',
@@ -9,9 +12,12 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
     input;
+    userdata;
 
     constructor(
-        private userService: UserService
+        private router: Router,
+        private userService: UserService,
+        private storeUserService: StoreuserService
     ) {}
 
     ngOnInit(){
@@ -22,12 +28,16 @@ export class LoginComponent implements OnInit {
     }
 
     loginNewUser(){
-        this.userService.loginUser(this.input).subscribe(
+        this.userService.loginUser(this.input).subscribe(            
             response => {
+                this.userdata = response;
+                this.storeUserService.savecrntuserid(this.userdata.user_id);
+
                 alert('User ' + this.input.username + ' has been logged in')
+                this.router.navigate(['/users', this.userdata.user_id]);
             },
             error => console.log('error', error)
-        );
+        );        
     }
 
 }
