@@ -1,8 +1,12 @@
-<h1>Welcome</h1>
+<div class="Profile" *ngFor="let useri of users | async">
+  <div *ngIf="useri.id == usercurrentId">
+    <h1>Welcome {{ useri.username }}</h1>
+  </div>
+</div>
 
 <div class="Users" *ngFor="let user of users | async; index as userId">
     <h3>
-        <a [title]="user.username" [routerLink]="['/messagewindow', usercurrentId, userId]">
+        <a [title]="user.username" [routerLink]="['/messagewindow', usercurrentId, userId+1]">
           {{ user.username }}
         </a>
     </h3>
