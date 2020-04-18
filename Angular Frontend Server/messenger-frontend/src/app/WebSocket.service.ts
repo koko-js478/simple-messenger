@@ -13,10 +13,10 @@ export class WebSocketService {
     private socket: any;
     readonly uri: string = "http://localhost:3000";
     postId;
-
+    
     constructor(
         private http: HttpClient
-        ) {
+        ) {        
         this.socket = io.connect(this.uri);
     }
 
@@ -28,14 +28,24 @@ export class WebSocketService {
         });
     }
 
-    storeMessagedb(newchatdetails) {
-        return this.http.post<any>('http://127.0.0.1:8000/chat/createchat/', newchatdetails).subscribe();
+    storeMessagedb(newchatdetails, tokenkey) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+            'Authorization': `Token ${tokenkey}`
+            })
+        };
+        return this.http.post<any>('http://127.0.0.1:8000/chat/createchat/', newchatdetails, httpOptions).subscribe();
     }
 
-    getPrevMessages(): Observable<any> {
-        return this.http.get('http://127.0.0.1:8000/chat/chats/?format=json');
+    getPrevMessages(tokenkey): Observable<any> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+            'Authorization': `Token ${tokenkey}`
+            })
+        };
+        return this.http.get('http://127.0.0.1:8000/chat/chats/?format=json', httpOptions);
     }
-
+    
     public getMessages() {
         return Observable.create((observer) => {
             this.socket.on('new-msg', function (data) {
