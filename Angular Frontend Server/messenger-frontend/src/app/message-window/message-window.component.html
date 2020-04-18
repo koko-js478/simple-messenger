@@ -1,3 +1,6 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class = "Users" *ngFor="let user of users | async">
     <div *ngIf="user.id == sender">
         <h3>Sender is {{ user.username }}</h3>
@@ -8,22 +11,37 @@
 </div>
 
 <div class = "PreviousMessages" *ngFor="let prevmsg of prevmessages">
-    <div *ngIf="prevmsg.sender == sender+1 && prevmsg.receiver == receiver+1">
-        <p>{{ prevmsg.textcontent }}</p>
+    <div *ngIf="prevmsg.sender == sender && prevmsg.receiver == receiver">
+        <div class="container">
+            <div class="right">
+                <p class="sender">You</p>
+            </div>
+            <p>{{ prevmsg.textcontent }}</p>
+        </div>
+        
     </div>
-    <div *ngIf="prevmsg.sender == receiver+1 && prevmsg.receiver == sender+1">
-        <h3>{{ prevmsg.textcontent }}</h3>
+    <div *ngIf="prevmsg.sender == receiver && prevmsg.receiver == sender">
+        <div class="container darker">
+            <p>{{ prevmsg.textcontent }}</p>
+        </div>
     </div>
 </div>
 
 <div class = "Messages" *ngFor="let data of messages">
     <div *ngIf="data.senderid == receiver">
-        <h3>{{ data.msg }}</h3>
+        <div class="container darker">
+            <p>{{ data.msg }}</p>
+        </div>        
     </div>
     <div *ngIf="data.receiverid == receiver && data.senderid == sender">
-        <p>{{ data.msg }}</p>
+        <div class="container">
+            <div class="right">
+                <p class="sender">You</p>
+            </div>  
+            <p>{{ data.msg }}</p>
+        </div> 
     </div>
 </div>
 
-<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
-<button (click)="sendMessage()">Send</button>
+<input type="text" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+<button class="but1" (click)="sendMessage()"><i class="fa fa-paper-plane-o" style="font-size:20px;color:dodgerblue"></i></button>
