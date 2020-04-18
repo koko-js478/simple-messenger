@@ -17,8 +17,8 @@ class ChatView(models.Model):
         return str(self.id)
 
     def create_chat(message, senderid, receiverid):
-        senderid = int(senderid) + 1
-        receiverid = int(receiverid) + 1
+        senderid = int(senderid)
+        receiverid = int(receiverid)
         chatnew = ChatView(sender = get_object_or_404(User, id=senderid), receiver = get_object_or_404(User, id=receiverid), sent_date = timezone.now(), textcontent = message)
         chatnew.save()
 
