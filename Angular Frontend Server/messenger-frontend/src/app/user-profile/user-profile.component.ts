@@ -25,7 +25,7 @@ export class UserProfileComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.users = this.userService.getallUsers();
+        this.users = this.userService.getallUsers(this.storeuserService.crnttokenkey);
         
         console.log(this.crntauthenticuser);
         this.route.paramMap.subscribe(params => {
