@@ -1,23 +1,67 @@
 # The-Angular-Django-Messenger
 
-This is a light-weight chatting application built on a **Django REST API** Framework Backend, **Angular** Frontend and a **SOCKET.IO** WebSocket server.
+This is a light-weight chatting application built on a **Django REST API** Framework as Backend, **Angular** Frontend and a **SOCKET.IO** WebSocket server.
+
+## Dependencies and Version Info
+
+* **Django : 3.0.4**
+* **djangorestframework : 3.11.0**
+* **Angular CLI : 9.1.1**
+* **Node.js : 12.16.1**
 
 
 ## Working
 
 This creates an **Angular** front-end server in ***localhost:4200***(the one which the users access). The **Django** backend gets hosted on ***localhost:8000***(the one which serves the **requests**  of ***localhost:4200***) and finally the **WebSocket** server is hosted on ***localhost:3000*** and provides users access to real-time communication and secure chat-rooms !
 
-## Usage
+## Some Pictures :D
 
-* Clone this repo and **cd** into the master branch directory.
+### Login/SignUp Page
+![One](https://github.com/sudoRicheek/The-Angular-Django-Socket-Messenger/blob/master/readmeimages/rm1.PNG)
 
-* **cd** into the **/RealTime Socket Server** and execute ```node index.js``` and the WebSocket Server will start in ***localhost:3000***
+### Profile Page
+![Two](https://github.com/sudoRicheek/The-Angular-Django-Socket-Messenger/blob/master/readmeimages/rm2.PNG)
 
-* **cd** into the **/Django REST Framework Backend** and execute ```python manage.py``` and the backend server will start in ***localhost:8000***
+### Message Window
+![Three](https://github.com/sudoRicheek/The-Angular-Django-Socket-Messenger/blob/master/readmeimages/rm3.PNG)
 
-* **cd** into the **/Angular Frontend Server/messenger-frontend** and execute ```ng serve -o``` and the frontend server will start in ***localhost:4200***
+## How To Use ?
 
-* Open ***localhost:4200/index*** in multiple tabs for interacting with the chat app :)
+* Clone this repo :
+  ```
+  git clone https://github.com/sudoRicheek/The-Angular-Django-Socket-Messenger.git
+  cd The-Angular-Django-Socket-Messenger
+  ```
+  
+* You'll need to create three **localhosts** so its advisable to split the terminals.  
+
+* For starting the **WebSocket Server** on ***localhost:3000***:
+  ```
+  cd RealTime Socket Server
+  node index.js
+  ```
+* For starting the **Django Backend API** on ***localhost:8000***
+  ```
+  cd Django REST Framework Backend
+  python manage.py runserver
+  ```
+
+* Finally to play with the **Angular** front-end
+  ```
+  cd Angular Frontend Server
+  cd messenger-frontend
+  ng serve -o
+  ```
+  
+  If there's an ```unhandled exception : Cannot find module @angular-devkit/build-angular/package.json``` then :
+  ```
+  npm install -g @angular/cli
+  npm install @angular-devkit/build-angular
+  ng serve -o
+  ```
+  And, it should work.
+
+* Open ***localhost:4200*** in multiple tabs for interacting with the chat app :)
 
 ## Author
 
