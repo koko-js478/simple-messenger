@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
         this.userService.loginUser(this.input).subscribe(            
             response => {
                 this.userdata = response;
+                this.storeUserService.crnttokenkey = this.userdata.token;
                 this.storeUserService.savecrntuserid(this.userdata.user_id);
 
                 alert('User ' + this.input.username + ' has been logged in')
