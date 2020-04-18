@@ -8,8 +8,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { LoginComponent } from './login/login.component';
 
-import { IndexComponent } from './index/index.component';
-
 import { SignupComponent } from './signup/signup.component';
 
 import { UserService } from './user.service';
