@@ -22,8 +22,13 @@ export class UserService {
         return this.http.post('http://127.0.0.1:8000/chat/api-auth/', userData);
     }
 
-    getallUsers(): Observable<any> {
-        return this.http.get('http://127.0.0.1:8000/chat/users/?format=json');
+    getallUsers(tokenkey): Observable<any> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+            'Authorization': `Token ${tokenkey}`
+            })
+        };
+        return this.http.get('http://127.0.0.1:8000/chat/users/?format=json', httpOptions);
     }
 
     
