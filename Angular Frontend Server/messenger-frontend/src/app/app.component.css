@@ -1,0 +1,31 @@
+
+h4 {
+    font-family:"Open Sans";
+    color: dodgerblue;
+    text-align: center;
+}
+
+.button {
+    background-color: white; /* Green */
+    border: 1px solid tomato;
+    border-radius: 5px;
+    color: black;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Open Sans";
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: tomato;
+    color: white;
+  }
+
+  a {
+    text-align: center;
+  }
