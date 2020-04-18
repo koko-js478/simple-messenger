@@ -7,9 +7,11 @@ import { Injectable } from '@angular/core';
 export class StoreuserService {
 
     crntuserid;
+    crnttokenkey;
 
     constructor() { 
         this.crntuserid = -1;
+        this.crnttokenkey = "";
     }
 
     savecrntuserid(userid) {
