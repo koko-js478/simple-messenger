@@ -30,6 +30,8 @@ export class MessageWindowComponent implements OnInit {
         private webSocketService: WebSocketService,
         private storeuserService: StoreuserService,
         ) { 
+            this.message = "";
+
             this.chatdetails = {
                 sender: null,
                 receiver: null,
@@ -46,10 +48,9 @@ export class MessageWindowComponent implements OnInit {
         }
 
     ngOnInit(){
-        this.users = this.userService.getallUsers();
-
+        this.users = this.userService.getallUsers(this.storeuserService.crnttokenkey);
         this.webSocketService
-            .getPrevMessages()
+            .getPrevMessages(this.storeuserService.crnttokenkey)
             .subscribe((data: any) => {
                 this.prevmessages = data;
               });
@@ -82,12 +83,14 @@ export class MessageWindowComponent implements OnInit {
             textcontent: this.message
         }
 
-        this.messages.push({msg: this.message, senderid: this.sender, receiverid: this.receiver})
+        if(this.message != ""){
+            this.messages.push({msg: this.message, senderid: this.sender, receiverid: this.receiver})
 
-        this.webSocketService.storeMessagedb(this.chatdetails);
-        
-        this.webSocketService.emit("new-message", {receiverid: this.receiver, msg: this.message, senderid: this.sender});
-        this.message = '';
+            this.webSocketService.storeMessagedb(this.chatdetails, this.storeuserService.crnttokenkey);
+            
+            this.webSocketService.emit("new-message", {receiverid: this.receiver, msg: this.message, senderid: this.sender});
+            this.message = '';
+        }
     }
 
 }
