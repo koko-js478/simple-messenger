@@ -31,13 +31,13 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     authentication_classes = [TokenAuthentication,]
-    #permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 class ChatViewViewSet(viewsets.ModelViewSet):
     queryset = ChatView.objects.all()
     serializer_class = ChatViewSerializer
-    #authentication_classes = [TokenAuthentication,]
-    #permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [TokenAuthentication,]
+    permission_classes = [permissions.IsAuthenticated]
 
 class CustomAuthToken(ObtainAuthToken):
 
