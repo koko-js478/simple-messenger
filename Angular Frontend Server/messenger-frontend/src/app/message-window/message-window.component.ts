@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { UserService } from '../user.service';
 import { WebSocketService } from '../WebSocket.service';
+import { StoreuserService } from '../storeUser.service';
 
 @Component({
     selector: 'message-window-component',
@@ -18,14 +19,16 @@ export class MessageWindowComponent implements OnInit {
     message: string;
     chatdetails;
     sentdate;
-
+    crntauthenticuser;
     
     messages;
 
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private userService: UserService,
         private webSocketService: WebSocketService,
+        private storeuserService: StoreuserService,
         ) { 
             this.chatdetails = {
                 sender: null,
@@ -39,6 +42,7 @@ export class MessageWindowComponent implements OnInit {
                 receiverid: 0
             }];
 
+            this.crntauthenticuser = this.storeuserService.getcrntuserid();
         }
 
     ngOnInit(){
@@ -51,8 +55,12 @@ export class MessageWindowComponent implements OnInit {
               });
 
         this.route.paramMap.subscribe(params => {
-            this.sender = +params.get('senderId') + 1;
-            this.receiver = +params.get('receiverId') + 1;
+            this.sender = +params.get('senderId');
+            this.receiver = +params.get('receiverId');
+            console.log(this.crntauthenticuser);
+            if(this.crntauthenticuser != (this.sender)){
+                this.router.navigate(['/login']);
+            }
           });
 
         this.webSocketService.emit('join', {userid: this.sender});
