@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './login/login.component';
-import { IndexComponent } from './index/index.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserService } from './user.service';
 import { WebSocketService } from './WebSocket.service';
@@ -22,7 +21,6 @@ import { MessageWindowComponent } from './message-window/message-window.componen
     AppComponent,
     UserProfileComponent,
     LoginComponent,
-    IndexComponent,
     SignupComponent,
     MessageWindowComponent,
   ],
@@ -35,7 +33,6 @@ import { MessageWindowComponent } from './message-window/message-window.componen
     RouterModule.forRoot([
       { path: 'users/:userId', component: UserProfileComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'index', component: IndexComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'messagewindow/:senderId/:receiverId', component: MessageWindowComponent},
       ])
