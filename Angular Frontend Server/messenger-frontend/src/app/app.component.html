@@ -1,8 +1,30 @@
-<a routerLink="/login" class="button">Login</a>
-<a routerLink="/signup" class="button">SignUp</a>
-<h1>Welcome to The Simple Messenger !</h1>
-<h4>A lightweight chatting application developed in Django and Angular with Socket.IO</h4><br>
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<body>
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
+    <a routerLink="/login" class="button">Login</a>
+    <a routerLink="/signup" class="button">SignUp</a>
+    <br>
+    <hr>
+    <a class="logout" href="#">Logout</a>
+  </div>
+
+  <div id="main">
+    <div class="navbar">
+      <button class="openbtn" (click)="openNav()">☰</button>
+    </div>  
+
+    <div class="header">
+      <h1>Welcome to The Simple Messenger !</h1>
+      <h4>A lightweight chatting application developed in Django and Angular with Socket.IO</h4><br>
+    </div>  
+
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  
+    <footer class="site-footer">
+      <p>Created by Richeek Das. April 2020</p>
+    </footer>
+  </div>
+</body>
