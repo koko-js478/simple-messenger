@@ -1,7 +1,13 @@
-a:link {
-    color: blue;
-  }
+a:visited {
+  color: dodgerblue;
+}
   
+a:link {
+  color: dodgerblue;
+}
+
 a:hover {
     color: tomato;
 }
+
+
