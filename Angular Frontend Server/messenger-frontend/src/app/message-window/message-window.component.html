@@ -21,15 +21,21 @@
         
     </div>
     <div *ngIf="prevmsg.sender == receiver && prevmsg.receiver == sender">
-        <div class="container darker">
+        <div class="container-darker">
             <p>{{ prevmsg.textcontent }}</p>
         </div>
     </div>
 </div>
 
+<div>
+    <hr>
+    <p style="color: dodgerblue ;font-size: 14px; text-align: center;  padding: 0; font-family: 'Open Sans';">Now</p>
+    <hr>
+</div>
+
 <div class = "Messages" *ngFor="let data of messages">
     <div *ngIf="data.senderid == receiver">
-        <div class="container darker">
+        <div class="container-darker">
             <p>{{ data.msg }}</p>
         </div>        
     </div>
@@ -42,6 +48,6 @@
         </div> 
     </div>
 </div>
-
+<br>
 <input type="text" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
-<button class="but1" (click)="sendMessage()"><i class="fa fa-paper-plane-o" style="font-size:20px;color:dodgerblue"></i></button>
+<button class="but1" (click)="sendMessage()"><i class="fa fa-paper-plane" style="font-size:20px;color:dodgerblue"></i></button>
