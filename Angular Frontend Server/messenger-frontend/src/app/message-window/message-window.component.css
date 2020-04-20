@@ -3,20 +3,28 @@ p {
     max-width: 800px;
     padding: 0 20px;
     font-family:"Open Sans";
-    color: black;
+  }
+  
+  .container-darker {
+    border: 1px solid #dedede;
+    background-color: #1a1a1a;
+    border-color: rgb(77, 75, 75);
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 60%;
+    color: white;
   }
   
   .container {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
+    border: 1px solid #dedede;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px 0;
-  }
-  
-  .darker {
-    border-color: #ccc;
-    background-color: #ddd;
+    margin-left: 60%;
+    margin-right: 10px;
+    border-color: rgb(77, 75, 75);
+    background-color: black;
+    color: #ccc;
   }
   
   .container::after {
@@ -36,11 +44,11 @@ p {
   }
 
   .but1 {
-    background-color: white; /* Green */
-    border: none;
-    border-radius: 5px;
+    background-color: #1a1a1a; /* Green */
+    border:none;
+    border-radius: 100%;
     color: black;
-    padding: 4px 10px;
+    padding: 6px 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -49,10 +57,11 @@ p {
     margin: 1px 1px;
     transition-duration: 0.4s;
     cursor: pointer;
+    outline: none;
   }
 
   .but1:hover {
-    background-color: #ccc; 
+    background-color: rgb(61, 57, 57); 
   }
 
   input[type=text] {
@@ -60,16 +69,21 @@ p {
     padding: 12px 20px;
     margin: 8px 0;
     border: none;
+    background-color: #1a1a1a;
     border-bottom: 2px solid lightblue;
     box-sizing: border-box;
-    color: black;
+    color: white;
     font-size : 16px;
     font-family: "Open Sans";
+    outline: none;
   }
   
   input[type=text]:hover {
     border-bottom: 2px solid tomato;
   }
 
-
-  
+  hr {
+    display: block; height: 1px;
+    border: 0; border-top: 1px solid rgb(70, 69, 69);
+    margin: 1em 0; padding: 0;
+  }
