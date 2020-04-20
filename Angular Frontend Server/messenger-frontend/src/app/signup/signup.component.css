@@ -1,8 +1,8 @@
 .but1 {
-  background-color: white; /* Green */
+  background-color: #1a1a1a; /* Green */
   border: 1px solid dodgerblue;
   border-radius: 5px;
-  color: black;
+  color: white;
   padding: 3px 10px;
   text-align: center;
   text-decoration: none;
@@ -12,21 +12,23 @@
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  outline: none;
 }
 
 .but1:hover {
   background-color: dodgerblue;
-  color: white;
 }
 
 input[type=text] {
+    background-color: #1a1a1a;
+    outline: none;
     width: 20%;
     padding: 12px 20px;
     margin: 8px 0;
     border: none;
     border-bottom: 2px solid lightblue;
     box-sizing: border-box;
-    color: black;
+    color: white;
     font-size : 16px;
     font-family: "Open Sans";
   }
@@ -40,13 +42,15 @@ input[type=text] {
   }
 
   input[type=password] {
+    outline: none;
+    background-color: #1a1a1a;
     width: 20%;
     padding: 12px 20px;
     margin: 8px 0;
     border: none;
     border-bottom: 2px solid lightblue;
     box-sizing: border-box;
-    color: black;
+    color: white;
     font-size : 16px;
     font-family: "Open Sans";
     text-align: left;
