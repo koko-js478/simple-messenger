@@ -63,6 +63,17 @@ This creates an **Angular** front-end server in ***localhost:4200***(the one whi
 
 * Open ***localhost:4200*** in multiple tabs for interacting with the chat app :)
 
+## Technologies
+
+<br><img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
+* **Angular 9**
+    
+<br><img src="https://www.django-rest-framework.org/img/logo.png" width = 250 height = auto/>
+* **Django REST Framework**
+    
+<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/1024px-Socket-io.svg.png" width = 150 height = auto/>
+* **Socket.IO**
+
 ## Author
 
 Created by ***sudoRicheek***. April 2020
