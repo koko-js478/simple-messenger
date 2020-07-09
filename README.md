@@ -1,6 +1,8 @@
-# The-Angular-Django-Messenger
+# The Angular Django SOCKET.IO Messenger
 
 This is a light-weight chatting application built on a **Django REST API** Framework as Backend, **Angular** Frontend and a **SOCKET.IO** WebSocket server.
+
+### [Checkout the DEMO.](https://sudoricheek.github.io/AngularChat/)
 
 ## Dependencies and Version Info
 
@@ -67,12 +69,14 @@ This creates an **Angular** front-end server in ***localhost:4200***(the one whi
 
 <br><img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
 * **Angular 9**
-    
-<br><img src="https://www.django-rest-framework.org/img/logo.png" width = 250 height = auto/>
-* **Django REST Framework**
-    
-<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/1024px-Socket-io.svg.png" width = 150 height = auto/>
-* **Socket.IO**
+
+<p float="center">
+  <img src="https://www.django-rest-framework.org/img/logo.png" width = 300/>
+  <img src="https://www.postgresql.org/media/img/about/press/elephant.png" width=150/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/1024px-Socket-io.svg.png" width = 150/>
+</p>
+
+* **Django REST Framework | PostgreSQL Database | Socket.IO**
 
 ## Author
 
