@@ -25,8 +25,22 @@ export class SignupComponent implements OnInit {
     }
     
     registerNewUser(){
-        this.userService.registerUser(this.register).subscribe();
-        alert("New User Created !");
-        this.router.navigate(['/login']);
+        this.userService.registerUser(this.register).subscribe(
+            response => {
+              if (response.user_id != -1){
+                  alert("User Registered Sucessfully");
+                  this.router.navigate(['/login']);
+              }
+              else
+              {
+                  alert(response.username)
+              }
+            },
+            error => {
+              if (error.error.username != null){
+                  alert(error.error.username)
+              }
+            }
+          );
     }
 }

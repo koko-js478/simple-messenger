@@ -49,7 +49,8 @@ class CustomAuthToken(ObtainAuthToken):
         token, created = Token.objects.get_or_create(user=user)
         return Response({
             'token': token.key,
-            'user_id': user.id
+            'user_id': user.id,
+            'username': user.username
         })
 
 @csrf_exempt
@@ -60,14 +61,18 @@ def create_new_chat(request):
         ChatView.create_chat(querydict['textcontent'], querydict['sender'], querydict['receiver'])
     return HttpResponse("Bonjour Hamba")
 
+@api_view(('POST',))
 @csrf_exempt
 def signup(request):
     if request.method == "POST":
         querydictstr = request.body.decode('UTF-8')
         querydict = ast.literal_eval(querydictstr)
         user = User.objects.create_user(querydict['username'], None, querydict['password'])
+        return Response({
+            'user_id': user.id,
+            'username': user.username
+        })
 
-    return HttpResponse("Bonjour Hamba")
 
 @csrf_exempt
 def get_current_user_id(request):

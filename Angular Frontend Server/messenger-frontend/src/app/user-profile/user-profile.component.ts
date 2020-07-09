@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, provideRoutes, Router } from '@angular/router';
 
 import { UserService } from '../user.service';
-import { StoreuserService } from '../storeUser.service';
+import { TokenManager } from '../tokenmanager.service';
 
 @Component({
     selector: 'user-profile-component',
@@ -19,13 +19,13 @@ export class UserProfileComponent implements OnInit {
         private router: Router,
         private route: ActivatedRoute,
         private userService: UserService,
-        private storeuserService: StoreuserService,
+        private tokenManager: TokenManager,
     ) { 
-        this.crntauthenticuser = this.storeuserService.getcrntuserid();
+        this.crntauthenticuser = this.tokenManager.retrieveToken().userid;
     }
 
     ngOnInit(){
-        this.users = this.userService.getallUsers(this.storeuserService.crnttokenkey);
+        this.users = this.userService.getallUsers(this.tokenManager.retrieveToken().token);
         
         console.log(this.crntauthenticuser);
         this.route.paramMap.subscribe(params => {

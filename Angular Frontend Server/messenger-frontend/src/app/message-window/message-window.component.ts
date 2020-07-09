@@ -3,7 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { UserService } from '../user.service';
 import { WebSocketService } from '../WebSocket.service';
-import { StoreuserService } from '../storeUser.service';
+import { TokenManager } from '../tokenmanager.service';
 
 @Component({
     selector: 'message-window-component',
@@ -28,7 +28,7 @@ export class MessageWindowComponent implements OnInit {
         private router: Router,
         private userService: UserService,
         private webSocketService: WebSocketService,
-        private storeuserService: StoreuserService,
+        private tokenManager: TokenManager,
         ) { 
             this.message = "";
 
@@ -44,13 +44,13 @@ export class MessageWindowComponent implements OnInit {
                 receiverid: 0
             }];
 
-            this.crntauthenticuser = this.storeuserService.getcrntuserid();
+            this.crntauthenticuser = this.tokenManager.retrieveToken().userid;
         }
 
     ngOnInit(){
-        this.users = this.userService.getallUsers(this.storeuserService.crnttokenkey);
+        this.users = this.userService.getallUsers(this.tokenManager.retrieveToken().token);
         this.webSocketService
-            .getPrevMessages(this.storeuserService.crnttokenkey)
+            .getPrevMessages(this.tokenManager.retrieveToken().token)
             .subscribe((data: any) => {
                 this.prevmessages = data;
               });
@@ -86,7 +86,7 @@ export class MessageWindowComponent implements OnInit {
         if(this.message != ""){
             this.messages.push({msg: this.message, senderid: this.sender, receiverid: this.receiver})
 
-            this.webSocketService.storeMessagedb(this.chatdetails, this.storeuserService.crnttokenkey);
+            this.webSocketService.storeMessagedb(this.chatdetails, this.tokenManager.retrieveToken().token);
             
             this.webSocketService.emit("new-message", {receiverid: this.receiver, msg: this.message, senderid: this.sender});
             this.message = '';
