@@ -1,8 +1,6 @@
-# The Angular Django SOCKET.IO Messenger
+# Simple Messenger
 
 This is a light-weight chatting application built on a **Django REST API** Framework as Backend, **Angular** Frontend and a **SOCKET.IO** WebSocket server.
-
-### [Checkout the DEMO.](https://sudoricheek.github.io/AngularChat/)
 
 ## Dependencies and Version Info
 
@@ -19,20 +17,20 @@ This creates an **Angular** front-end server in ***localhost:4200***(the one whi
 ## Some Pictures :D
 
 ### Login/SignUp Page
-![One](https://github.com/sudoRicheek/The-Angular-Django-Socket-Messenger/blob/master/readmeimages/rm1.PNG)
+![One](https://github.com/softengineer123/simple-messenger/blob/master/readmeimages/rm1.PNG)
 
 ### Profile Page
-![Two](https://github.com/sudoRicheek/The-Angular-Django-Socket-Messenger/blob/master/readmeimages/rm2.PNG)
+![Two](https://github.com/softengineer123/simple-messenger/blob/master/readmeimages/rm2.PNG)
 
 ### Message Window
-![Three](https://github.com/sudoRicheek/The-Angular-Django-Socket-Messenger/blob/master/readmeimages/rm3.PNG)
+![Three](https://github.com/softengineer123/simple-messenger/blob/master/readmeimages/rm3.PNG)
 
 ## How To Use ?
 
 * Clone this repo :
   ```
-  git clone https://github.com/sudoRicheek/The-Angular-Django-Socket-Messenger.git
-  cd The-Angular-Django-Socket-Messenger
+  git clone https://github.com/softengineer123/simple-messenger.git
+  cd simple-messenger
   ```
   
 * You'll need to create three **localhosts** so its advisable to split the terminals.  
@@ -78,6 +76,3 @@ This creates an **Angular** front-end server in ***localhost:4200***(the one whi
 
 * **Django REST Framework | PostgreSQL Database | Socket.IO**
 
-## Author
-
-Created by ***sudoRicheek***. April 2020
